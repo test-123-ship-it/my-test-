@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>匹配属于你的动物塑 | 全球动物性格测试</title>
+    <title>测试适合你的职业</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Noto Sans SC', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
         }
         
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #ff7e5f;
-            --accent-color: #8e44ad;
+            --primary-color: #4a6bff;
+            --secondary-color: #6c5ce7;
+            --accent-color: #00cec9;
             --light-color: #f8f9fa;
-            --dark-color: #2c3e50;
+            --dark-color: #2d3436;
             --text-color: #333;
             --border-radius: 12px;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s ease;
         }
         
         body {
-            background-color: #f0f7ff;
+            background-color: #f0f5ff;
             color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
-            background-image: radial-gradient(#c9e6ff 2px, transparent 2px);
-            background-size: 30px 30px;
+            background-image: linear-gradient(135deg, #f0f5ff 0%, #f9f9ff 100%);
         }
         
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -50,24 +49,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 90vh;
+            min-height: 100vh;
             text-align: center;
             padding: 30px 20px;
             animation: fadeIn 1s ease-out;
         }
         
         .logo {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             animation: float 3s ease-in-out infinite;
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             color: var(--dark-color);
-            margin-bottom: 15px;
-            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -75,68 +74,63 @@
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--dark-color);
             margin-bottom: 40px;
-            max-width: 600px;
+            max-width: 700px;
             opacity: 0.8;
         }
         
-        .animal-counter {
-            display: inline-flex;
+        .test-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .info-item {
+            display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(74, 144, 226, 0.1);
-            padding: 8px 16px;
-            border-radius: 30px;
-            margin-bottom: 30px;
             color: var(--primary-color);
             font-weight: 500;
         }
         
         .start-btn {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
-            padding: 18px 50px;
-            font-size: 1.4rem;
+            padding: 20px 60px;
+            font-size: 1.5rem;
             border-radius: 50px;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 25px rgba(74, 107, 255, 0.3);
             font-weight: 600;
             letter-spacing: 1px;
             margin-top: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
         
         .start-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            box-shadow: 0 15px 30px rgba(74, 107, 255, 0.4);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
         }
         
-        .animal-categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
-            max-width: 700px;
-        }
-        
-        .category-tag {
-            background: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--dark-color);
+        .illustration {
+            width: 350px;
+            height: 250px;
+            margin-bottom: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150"><path d="M40,75 Q50,40 70,50 T100,40 T130,50 T160,40 T180,75 T160,110 T130,100 T100,110 T70,100 T40,75" fill="%234a6bff" opacity="0.1"/><rect x="60" y="60" width="80" height="50" rx="10" fill="%234a6bff" opacity="0.2"/><rect x="70" y="70" width="20" height="20" rx="5" fill="%234a6bff" opacity="0.3"/><rect x="110" y="70" width="20" height="20" rx="5" fill="%234a6bff" opacity="0.3"/><circle cx="100" cy="100" r="10" fill="%2300cec9" opacity="0.3"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
         }
         
         /* 测试页样式 */
@@ -153,83 +147,91 @@
             border-radius: 10px;
             margin-bottom: 30px;
             overflow: hidden;
-            height: 10px;
+            height: 12px;
         }
         
         .progress-bar {
             height: 100%;
-            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-            width: 5%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            width: 4%;
             border-radius: 10px;
             transition: width 0.5s ease;
         }
         
-        .progress-text {
-            text-align: center;
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 10px;
+        }
+        
+        .question-counter {
             font-weight: 600;
-            color: var(--dark-color);
+            color: var(--primary-color);
+            font-size: 1.1rem;
         }
         
         .question-container {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 50px;
             box-shadow: var(--shadow);
             margin-bottom: 30px;
             animation: slideIn 0.5s ease-out;
         }
         
         .question-number {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--primary-color);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         
         .question-text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--dark-color);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             line-height: 1.4;
         }
         
         .options-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
         }
         
         .option {
             background-color: var(--light-color);
             border: 2px solid #e0e0e0;
             border-radius: var(--border-radius);
-            padding: 18px 20px;
+            padding: 20px 25px;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
         }
         
         .option:hover {
             border-color: var(--primary-color);
-            background-color: rgba(74, 144, 226, 0.05);
+            background-color: rgba(74, 107, 255, 0.05);
             transform: translateX(5px);
         }
         
         .option.selected {
             border-color: var(--primary-color);
-            background-color: rgba(74, 144, 226, 0.1);
+            background-color: rgba(74, 107, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(74, 107, 255, 0.1);
         }
         
         .option-icon {
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: center;
         }
         
         .option-text {
@@ -239,19 +241,19 @@
         .nav-buttons {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 40px;
         }
         
         .nav-btn {
-            padding: 12px 25px;
+            padding: 15px 30px;
             border: none;
             border-radius: var(--border-radius);
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-weight: 500;
         }
         
@@ -261,13 +263,13 @@
         }
         
         .nav-btn.next {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
         }
         
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        .nav-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
         
         .nav-btn:disabled {
@@ -287,17 +289,17 @@
         
         .result-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         
         .result-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--dark-color);
             margin-bottom: 15px;
         }
         
         .result-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--primary-color);
             margin-bottom: 30px;
         }
@@ -309,84 +311,70 @@
             gap: 40px;
         }
         
-        .animal-card {
+        .career-card {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 40px;
             box-shadow: var(--shadow);
             width: 100%;
-            max-width: 700px;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
         
-        .animal-icon {
+        .career-icon {
             font-size: 4rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
-        .animal-name {
-            font-size: 2.2rem;
+        .career-name {
+            font-size: 2.5rem;
             color: var(--dark-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
-        .animal-scientific {
-            font-size: 1rem;
+        .career-field {
+            font-size: 1.2rem;
             color: #666;
-            font-style: italic;
-            margin-bottom: 20px;
+            background-color: rgba(74, 107, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            display: inline-block;
         }
         
-        .animal-description {
-            font-size: 1.1rem;
+        .career-description {
+            font-size: 1.2rem;
             line-height: 1.7;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             text-align: left;
-        }
-        
-        .traits-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-        
-        .trait {
-            background: rgba(74, 144, 226, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--primary-color);
-            font-weight: 500;
         }
         
         .match-percentage {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding: 15px 25px;
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(142, 68, 173, 0.1));
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(74, 107, 255, 0.1), rgba(108, 92, 231, 0.1));
             border-radius: var(--border-radius);
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
             justify-content: center;
         }
         
         .percentage-circle {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: conic-gradient(var(--primary-color) 0% 85%, #e0e0e0 85% 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--dark-color);
             position: relative;
@@ -395,8 +383,8 @@
         .percentage-circle::before {
             content: '';
             position: absolute;
-            width: 70px;
-            height: 70px;
+            width: 85px;
+            height: 85px;
             background-color: white;
             border-radius: 50%;
         }
@@ -406,74 +394,112 @@
             z-index: 1;
         }
         
-        .other-animals {
+        .percentage-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .career-traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
             width: 100%;
-            max-width: 700px;
+        }
+        
+        .trait {
+            background: rgba(74, 107, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .other-careers {
+            width: 100%;
+            max-width: 800px;
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 40px;
             box-shadow: var(--shadow);
         }
         
-        .other-animals-title {
-            font-size: 1.5rem;
+        .other-careers-title {
+            font-size: 1.8rem;
             color: var(--dark-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
         }
         
-        .other-animals-list {
+        .other-careers-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
         }
         
-        .other-animal {
+        .other-career {
             display: flex;
             flex-direction: column;
             align-items: center;
             background-color: #f9f9f9;
-            padding: 15px;
+            padding: 20px;
             border-radius: var(--border-radius);
-            width: 120px;
+            width: 180px;
             transition: var(--transition);
             cursor: pointer;
         }
         
-        .other-animal:hover {
+        .other-career:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(74, 107, 255, 0.05);
         }
         
-        .other-animal-icon {
-            font-size: 2rem;
+        .other-career-icon {
+            font-size: 2.2rem;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .other-career-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        .other-career-field {
+            font-size: 0.9rem;
+            color: #666;
         }
         
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 50px;
+            flex-wrap: wrap;
         }
         
         .action-btn {
-            padding: 15px 30px;
+            padding: 18px 35px;
             border: none;
             border-radius: var(--border-radius);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 500;
         }
         
         .action-btn.restart {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
         }
         
@@ -484,7 +510,43 @@
         
         .action-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detailed-analysis {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+        
+        .analysis-title {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
         }
         
         /* 动画效果 */
@@ -504,21 +566,21 @@
         }
         
         /* 响应式设计 */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .question-text {
-                font-size: 1.3rem;
+                font-size: 1.6rem;
             }
             
-            .animal-card, .other-animals {
-                padding: 20px;
+            .career-card, .other-careers, .detailed-analysis {
+                padding: 30px;
             }
             
-            .animal-name {
-                font-size: 1.8rem;
+            .career-name {
+                font-size: 2rem;
             }
             
             .nav-buttons {
@@ -543,14 +605,42 @@
             }
         }
         
-        .animal-type-tag {
-            background: rgba(255, 126, 95, 0.1);
-            color: var(--secondary-color);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-top: 5px;
-            display: inline-block;
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .question-text {
+                font-size: 1.4rem;
+            }
+            
+            .option {
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .test-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .career-card, .other-careers, .detailed-analysis {
+                padding: 20px;
+            }
+            
+            .career-name {
+                font-size: 1.8rem;
+            }
+            
+            .other-career {
+                width: 140px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -559,29 +649,32 @@
         <!-- 封面页 -->
         <div class="cover-page" id="coverPage">
             <div class="logo">
-                <i class="fas fa-paw"></i>
+                <i class="fas fa-briefcase"></i>
             </div>
-            <h1>匹配属于你的动物塑</h1>
-            <p class="subtitle">通过20道精心设计的题目，发现你与全球各类动物的神秘联系。从非洲草原到深海，从热带雨林到北极冰川，找到你的动物灵魂伴侣！</p>
+            <h1>测试适合你的职业</h1>
+            <p class="subtitle">通过25道专业测试题，分析你的性格、兴趣和能力，为你推荐最适合的职业方向。发现你的职业潜能，规划未来职业生涯！</p>
             
-            <div class="animal-counter">
-                <i class="fas fa-globe-americas"></i>
-                <span>覆盖全球6大洲超过50种代表性动物</span>
+            <div class="illustration"></div>
+            
+            <div class="test-info">
+                <div class="info-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>25道专业测试题</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>约5-7分钟完成</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>个性化职业分析</span>
+                </div>
             </div>
             
             <button class="start-btn" id="startBtn">
                 <i class="fas fa-play-circle"></i>
                 开始测试
             </button>
-            
-            <div class="animal-categories">
-                <div class="category-tag"><i class="fas fa-lion"></i> 哺乳动物</div>
-                <div class="category-tag"><i class="fas fa-dove"></i> 鸟类</div>
-                <div class="category-tag"><i class="fas fa-fish"></i> 水生动物</div>
-                <div class="category-tag"><i class="fas fa-spider"></i> 昆虫与蛛形纲</div>
-                <div class="category-tag"><i class="fas fa-dragon"></i> 爬行动物</div>
-                <div class="category-tag"><i class="fas fa-paw"></i> 其他动物</div>
-            </div>
         </div>
         
         <!-- 测试页 -->
@@ -589,7 +682,10 @@
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
-            <div class="progress-text" id="progressText">第1题，共20题</div>
+            <div class="progress-info">
+                <div class="question-counter" id="progressText">第1题，共25题</div>
+                <div class="question-counter">职业匹配测试</div>
+            </div>
             
             <div class="question-container" id="questionContainer">
                 <div class="question-number">
@@ -607,7 +703,7 @@
                         <i class="fas fa-arrow-left"></i>
                         上一题
                     </button>
-                    <button class="nav-btn next" id="nextBtn">
+                    <button class="nav-btn next" id="nextBtn" disabled>
                         下一题
                         <i class="fas fa-arrow-right"></i>
                     </button>
@@ -618,18 +714,18 @@
         <!-- 结果页 -->
         <div class="result-page" id="resultPage">
             <div class="result-header">
-                <h2 class="result-title">你的动物塑匹配结果</h2>
-                <p class="result-subtitle">基于你的回答，我们找到了最匹配你的动物灵魂！</p>
+                <h2 class="result-title">你的职业匹配结果</h2>
+                <p class="result-subtitle">基于你的回答，我们为你推荐最适合的职业方向</p>
             </div>
             
             <div class="result-content">
-                <div class="animal-card">
-                    <div class="animal-icon" id="resultIcon"></div>
-                    <h3 class="animal-name" id="resultName"></h3>
-                    <p class="animal-scientific" id="resultScientific"></p>
-                    <p class="animal-description" id="resultDescription"></p>
+                <div class="career-card">
+                    <div class="career-icon" id="resultIcon"></div>
+                    <h3 class="career-name" id="resultName"></h3>
+                    <div class="career-field" id="resultField"></div>
+                    <p class="career-description" id="resultDescription"></p>
                     
-                    <div class="traits-container" id="resultTraits">
+                    <div class="career-traits" id="resultTraits">
                         <!-- 特征标签将通过JS动态生成 -->
                     </div>
                     
@@ -638,16 +734,52 @@
                             <span id="matchPercentage">85%</span>
                         </div>
                         <div>
-                            <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 5px;">匹配度</div>
-                            <div style="font-size: 0.9rem; color: #666;">与你的性格契合度</div>
+                            <div class="percentage-text">职业匹配度</div>
+                            <div style="font-size: 0.9rem; color: #666;">与你的性格和能力契合度</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="other-animals">
-                    <h3 class="other-animals-title">其他可能匹配的动物</h3>
-                    <div class="other-animals-list" id="otherAnimalsList">
-                        <!-- 其他动物将通过JS动态生成 -->
+                <div class="detailed-analysis">
+                    <h3 class="analysis-title">详细职业分析</h3>
+                    
+                    <div class="analysis-section">
+                        <h4 class="section-title">
+                            <i class="fas fa-user-check"></i>
+                            你的职业优势
+                        </h4>
+                        <div class="section-content" id="strengthsAnalysis"></div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h4 class="section-title">
+                            <i class="fas fa-chart-line"></i>
+                            职业发展前景
+                        </h4>
+                        <div class="section-content" id="prospectsAnalysis"></div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h4 class="section-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            建议学习方向
+                        </h4>
+                        <div class="section-content" id="learningAnalysis"></div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h4 class="section-title">
+                            <i class="fas fa-briefcase"></i>
+                            入门职位建议
+                        </h4>
+                        <div class="section-content" id="entryJobsAnalysis"></div>
+                    </div>
+                </div>
+                
+                <div class="other-careers">
+                    <h3 class="other-careers-title">其他可能适合的职业方向</h3>
+                    <div class="other-careers-list" id="otherCareersList">
+                        <!-- 其他职业将通过JS动态生成 -->
                     </div>
                 </div>
                 
@@ -666,366 +798,395 @@
     </div>
 
     <script>
-        // 动物数据库 - 包含全球各类代表性动物
-        const animalsDatabase = [
-            // 哺乳动物
+        // 职业数据库 - 包含各种职业方向
+        const careersDatabase = [
+            // 技术类职业
             { 
                 id: 1, 
-                name: "非洲狮", 
-                scientific: "Panthera leo",
-                icon: "fas fa-lion",
-                type: "哺乳动物",
-                traits: ["领导力", "勇气", "保护欲", "自信", "社交"],
-                description: "非洲狮是草原上的王者，具有强大的领导力和保护群体的本能。你像狮子一样天生具有领导气质，勇于承担责任，善于保护身边的人，在群体中自然成为核心人物。",
-                region: "非洲草原"
+                name: "软件工程师", 
+                field: "技术/IT",
+                icon: "fas fa-code",
+                type: "技术类",
+                traits: ["逻辑思维", "问题解决", "创造力", "学习能力", "团队协作"],
+                description: "软件工程师是数字世界的建筑师，负责设计、开发和维护各种软件应用和系统。他们使用编程语言和开发工具创建解决实际问题的软件解决方案，推动技术创新和数字化转型。",
+                strengths: "你拥有出色的逻辑思维能力和问题解决能力，能够理解复杂系统并找到有效的解决方案。你对技术充满热情，善于学习和掌握新技能，能够在快速变化的技术领域保持竞争力。",
+                prospects: "随着数字化转型加速，软件工程师需求持续增长。从移动应用到人工智能，从云计算到区块链，软件工程师在各个领域都有广阔的发展空间。资深工程师可成长为技术架构师、技术总监或创业公司创始人。",
+                learning: "建议学习计算机科学基础知识、数据结构和算法，掌握至少一门主流编程语言（如Python、Java、JavaScript）。了解软件开发流程、版本控制（Git）和测试方法。关注前沿技术如人工智能、云计算和移动开发。",
+                entryJobs: "初级软件开发工程师、前端开发工程师、后端开发工程师、移动应用开发工程师、测试工程师"
             },
             { 
                 id: 2, 
-                name: "大熊猫", 
-                scientific: "Ailuropoda melanoleuca",
-                icon: "fas fa-paw",
-                type: "哺乳动物",
-                traits: ["温和", "和平", "独特", "适应力", "悠闲"],
-                description: "大熊猫是和平与独特的象征，以其温和的性格和独特的外表受到全世界喜爱。你像大熊猫一样具有温和的性格，追求和平与和谐，虽然看似悠闲，但内心有着强大的适应能力。",
-                region: "中国"
+                name: "数据科学家", 
+                field: "技术/数据分析",
+                icon: "fas fa-chart-line",
+                type: "技术类",
+                traits: ["分析思维", "统计学知识", "编程能力", "业务理解", "沟通能力"],
+                description: "数据科学家是数据驱动决策的关键角色，他们从海量数据中提取有价值的信息和洞察，帮助企业做出更明智的商业决策。结合统计学、机器学习和领域知识解决复杂问题。",
+                strengths: "你具有强大的分析思维和统计学基础，能够从数据中发现模式和趋势。你善于将复杂数据转化为可理解的洞察，并具备将数据见解转化为业务价值的沟通能力。",
+                prospects: "在大数据时代，数据科学家是企业数字化转型的核心力量。从金融到医疗，从零售到制造，各行各业都需要数据科学人才。职业发展路径包括高级数据科学家、数据分析总监、首席数据官等。",
+                learning: "建议学习统计学、机器学习、数据挖掘等核心知识，掌握Python或R编程语言。学习SQL数据库查询、数据可视化工具（如Tableau）和大数据技术（如Hadoop、Spark）。",
+                entryJobs: "数据分析师、商业智能分析师、数据工程师、机器学习工程师、数据科学家助理"
             },
             { 
                 id: 3, 
-                name: "红狐狸", 
-                scientific: "Vulpes vulpes",
-                icon: "fas fa-fox",
-                type: "哺乳动物",
-                traits: ["机智", "灵活", "适应力", "好奇心", "独立"],
-                description: "红狐狸是聪明与机智的代表，能够适应各种环境并找到解决问题的创造性方法。你像狐狸一样机智灵活，总能在复杂情况下找到出路，拥有强烈的好奇心和独立解决问题的能力。",
-                region: "北半球广泛分布"
+                name: "产品经理", 
+                field: "技术/产品",
+                icon: "fas fa-tasks",
+                type: "技术/商业类",
+                traits: ["用户洞察", "市场分析", "项目管理", "沟通协调", "战略思维"],
+                description: "产品经理是产品的首席执行官，负责产品的整个生命周期，从市场调研、需求分析到产品设计、开发上线和迭代优化。他们连接用户、技术和商业，打造成功的产品。",
+                strengths: "你具备出色的用户洞察能力和市场分析能力，能够理解用户需求并转化为产品功能。你善于协调不同团队，平衡技术可行性和商业价值，推动产品成功。",
+                prospects: "产品经理是互联网和科技公司的核心岗位，随着数字化转型深入，传统行业也越来越多需要产品经理。职业发展路径包括高级产品经理、产品总监、产品副总裁，也可向创业或投资方向发展。",
+                learning: "建议学习产品设计方法、用户体验原理、市场分析技巧。了解技术基础知识、数据分析方法和项目管理工具。培养商业敏感度和战略思维能力。",
+                entryJobs: "产品助理、产品专员、产品经理（助理）、用户体验设计师、产品运营"
             },
+            // 商业类职业
             { 
                 id: 4, 
-                name: "座头鲸", 
-                scientific: "Megaptera novaeangliae",
-                icon: "fas fa-whale",
-                type: "哺乳动物",
-                traits: ["智慧", "沟通", "迁徙", "保护欲", "深沉"],
-                description: "座头鲸是海洋中的智慧巨兽，以其复杂的歌声和长途迁徙而闻名。你像座头鲸一样深沉而智慧，善于沟通表达，有着强烈的情感和保护欲，同时具备长途跋涉的毅力。",
-                region: "全球海洋"
+                name: "市场营销经理", 
+                field: "商业/营销",
+                icon: "fas fa-bullhorn",
+                type: "商业类",
+                traits: ["创意策划", "市场洞察", "沟通能力", "数据分析", "团队管理"],
+                description: "市场营销经理负责制定和执行品牌营销策略，通过市场研究、广告宣传、数字营销等手段提升品牌知名度和销售业绩。他们连接产品和消费者，创造市场价值。",
+                strengths: "你具备出色的创意策划能力和市场洞察力，能够理解消费者心理并制定有效的营销策略。你善于沟通表达，能够协调内部团队和外部合作伙伴，推动营销活动成功执行。",
+                prospects: "在数字营销时代，市场营销经理需要掌握线上线下整合营销能力。职业发展路径包括市场总监、品牌总监、首席营销官等。也可向咨询、创业或自媒体方向发展。",
+                learning: "建议学习市场营销理论、消费者行为学、品牌管理、数字营销（SEO、SEM、社交媒体营销）。掌握数据分析工具，了解内容创作和广告投放技巧。",
+                entryJobs: "市场营销专员、品牌专员、数字营销专员、市场调研分析师、公关专员"
             },
             { 
                 id: 5, 
-                name: "北极狐", 
-                scientific: "Vulpes lagopus",
-                icon: "fas fa-snowflake",
-                type: "哺乳动物",
-                traits: ["适应力", "耐寒", "变色", "生存力", "机智"],
-                description: "北极狐是极地生存专家，能够适应极端环境并随季节改变毛色。你像北极狐一样具有惊人的适应能力，能够在困难环境中生存并找到机会，外表可能随环境变化，但内心始终坚韧。",
-                region: "北极地区"
+                name: "金融分析师", 
+                field: "商业/金融",
+                icon: "fas fa-chart-pie",
+                type: "商业类",
+                traits: ["财务分析", "投资判断", "风险意识", "细节关注", "沟通表达"],
+                description: "金融分析师通过分析财务数据和市场趋势，为企业和个人提供投资建议和财务决策支持。他们在投资银行、基金管理、企业财务等领域发挥关键作用。",
+                strengths: "你具备出色的财务分析能力和投资判断力，能够理解复杂的经济数据和金融市场。你注重细节，有强烈的风险意识，能够为投资决策提供可靠的数据支持。",
+                prospects: "金融分析师在各类金融机构都有广泛需求，随着金融市场复杂化，专业分析人才的价值日益凸显。职业发展路径包括高级分析师、投资经理、财务总监、首席财务官等。",
+                learning: "建议学习财务会计、公司金融、投资学、经济学等核心知识。掌握财务建模、数据分析工具（Excel、Python）。考取CFA、FRM等专业证书可提升竞争力。",
+                entryJobs: "财务分析员、投资分析员、风险控制专员、基金助理、证券分析员"
             },
-            // 鸟类
+            // 创意类职业
             { 
                 id: 6, 
-                name: "金刚鹦鹉", 
-                scientific: "Ara ararauna",
-                icon: "fas fa-dove",
-                type: "鸟类",
-                traits: ["社交", "色彩", "长寿", "智慧", "发声"],
-                description: "金刚鹦鹉是热带雨林中的色彩大师，以其鲜艳的羽毛和社交性而闻名。你像金刚鹦鹉一样热爱社交，为周围环境带来色彩和活力，拥有长久的记忆力和智慧，善于表达自己。",
-                region: "南美洲热带雨林"
+                name: "平面设计师", 
+                field: "创意/设计",
+                icon: "fas fa-palette",
+                type: "创意类",
+                traits: ["视觉创意", "审美能力", "软件技能", "沟通理解", "时间管理"],
+                description: "平面设计师通过视觉元素传达信息和情感，创作品牌标识、广告海报、包装设计、网站界面等视觉作品。他们结合艺术美感和商业需求，打造吸引人的视觉体验。",
+                strengths: "你具备出色的视觉创意能力和审美眼光，能够将抽象概念转化为吸引人的视觉设计。你善于理解客户需求，掌握设计软件技能，能够在限定时间内完成高质量设计作品。",
+                prospects: "在视觉传播日益重要的今天，平面设计师在各行各业都有广泛需求。从传统印刷到数字媒体，设计师可向UI/UX设计、品牌设计、艺术指导等方向发展。自由职业和远程工作也是常见选择。",
+                learning: "建议学习设计原理、色彩理论、排版技巧等基础知识。掌握Adobe Creative Suite（Photoshop、Illustrator、InDesign）等设计工具。了解用户体验设计和数字媒体趋势。",
+                entryJobs: "设计助理、平面设计师、视觉设计师、UI设计师、品牌设计师"
             },
             { 
                 id: 7, 
-                name: "帝企鹅", 
-                scientific: "Aptenodytes forsteri",
-                icon: "fas fa-kiwi-bird",
-                type: "鸟类",
-                traits: ["耐力", "合作", "父爱", "抗寒", "纪律"],
-                description: "帝企鹅是南极的生存专家，以其极端的耐寒能力和团队合作精神而闻名。你像帝企鹅一样具有惊人的耐力，能够在极端困难的环境中坚持，重视家庭和团队合作，有强烈的责任感。",
-                region: "南极"
+                name: "内容创作者", 
+                field: "创意/媒体",
+                icon: "fas fa-pen-nib",
+                type: "创意类",
+                traits: ["内容创作", "故事讲述", "平台理解", "受众分析", "自我管理"],
+                description: "内容创作者通过文字、图片、视频等形式在各种平台创作有价值的内容，吸引和影响受众。他们在自媒体、品牌营销、媒体出版等领域发挥重要作用。",
+                strengths: "你具备出色的内容创作能力和故事讲述技巧，能够创作吸引人的文字、图片或视频内容。你理解不同平台的特性，能够分析受众需求，持续产出高质量内容。",
+                prospects: "随着内容营销和自媒体兴起，内容创作者的需求持续增长。可向专业领域深耕，成为垂直领域意见领袖；或加入企业从事品牌内容创作；也可发展个人IP，实现商业变现。",
+                learning: "建议学习内容策划、写作技巧、视频制作、摄影等技能。了解各平台（微信公众号、抖音、B站、小红书）的内容特点和算法机制。掌握SEO和社交媒体运营知识。",
+                entryJobs: "内容运营专员、新媒体编辑、文案策划、视频制作助理、社交媒体专员"
             },
+            // 服务类职业
             { 
                 id: 8, 
-                name: "猫头鹰", 
-                scientific: "Strigiformes",
-                icon: "fas fa-owl",
-                type: "鸟类",
-                traits: ["智慧", "观察力", "夜间", "耐心", "神秘"],
-                description: "猫头鹰是夜间的智慧象征，以其敏锐的观察力和耐心等待而闻名。你像猫头鹰一样善于观察和思考，在安静中洞察事物的本质，拥有神秘的气质和超凡的耐心。",
-                region: "全球广泛分布"
+                name: "心理咨询师", 
+                field: "服务/健康",
+                icon: "fas fa-heart",
+                type: "服务类",
+                traits: ["同理心", "倾听能力", "分析判断", "保密意识", "持续学习"],
+                description: "心理咨询师帮助人们应对心理困扰，提升心理健康和生活质量。通过专业咨询技术，协助来访者认识自我、解决问题、实现个人成长和发展。",
+                strengths: "你具备强烈的同理心和出色的倾听能力，能够理解他人的感受和需求。你善于分析判断，能够运用专业知识帮助他人，同时保持专业边界和保密意识。",
+                prospects: "随着社会对心理健康重视度提高，心理咨询师的需求日益增长。可在心理咨询机构、医院、学校、企业等场所工作，也可独立开设咨询室。需要持续学习和专业督导。",
+                learning: "建议系统学习心理学基础知识、心理咨询理论和技术。参加专业培训和实践督导，积累咨询经验。考取心理咨询师资格证书，持续学习最新研究成果和方法。",
+                entryJobs: "心理咨询助理、心理健康教育者、心理测评师、热线咨询员、学校心理辅导员"
             },
-            // 水生动物
             { 
                 id: 9, 
-                name: "海豚", 
-                scientific: "Delphinidae",
-                icon: "fas fa-fish",
-                type: "水生动物",
-                traits: ["智慧", "友善", "社交", "玩耍", "回声定位"],
-                description: "海豚是海洋中的智慧精灵，以其高度的社交性、友善和智慧而闻名。你像海豚一样聪明友善，热爱社交和团队合作，总是为周围带来欢乐，同时拥有出色的沟通能力。",
-                region: "全球海洋"
+                name: "教师", 
+                field: "服务/教育",
+                icon: "fas fa-chalkboard-teacher",
+                type: "服务类",
+                traits: ["知识传递", "耐心细致", "沟通表达", "组织能力", "责任心"],
+                description: "教师是知识的传播者和学生的引导者，负责设计教学方案、传授知识技能、评估学习成果，帮助学生全面发展。他们在各个教育阶段和领域发挥关键作用。",
+                strengths: "你具备出色的知识传递能力和沟通表达技巧，能够将复杂概念讲解清晰易懂。你耐心细致，有强烈的责任心，关心学生成长，能够创造积极的学习环境。",
+                prospects: "教师是社会的基石职业，随着教育理念更新和技术发展，教师需要不断学习和创新。可向学科专家、教育管理者、教育咨询师等方向发展，也可从事教育科技或教育创业。",
+                learning: "建议学习所教学科的专业知识、教育学理论、教学方法和评估技巧。掌握现代教育技术和课堂管理技巧。参加教师培训和专业发展活动，持续提升教学能力。",
+                entryJobs: "助教、实习教师、学科教师、培训师、教育顾问"
             },
+            // 管理类职业
             { 
                 id: 10, 
-                name: "章鱼", 
-                scientific: "Octopoda",
-                icon: "fas fa-octopus",
-                type: "水生动物",
-                traits: ["智慧", "变形", "伪装", "解决问题", "独立"],
-                description: "章鱼是海洋中的智慧谜题，以其惊人的变形能力和解决问题的能力而闻名。你像章鱼一样机智灵活，善于解决复杂问题，能够适应各种环境并找到创造性的解决方案。",
-                region: "全球海洋"
-            },
-            // 爬行动物
-            { 
-                id: 11, 
-                name: "科莫多巨蜥", 
-                scientific: "Varanus komodoensis",
-                icon: "fas fa-dragon",
-                type: "爬行动物",
-                traits: ["耐心", "力量", "古老", "适应力", "独居"],
-                description: "科莫多巨蜥是现存的古老爬行动物代表，以其强大的力量和耐心的狩猎方式而闻名。你像科莫多巨蜥一样具有古老的智慧，行事耐心而果断，拥有强大的适应能力和独立性。",
-                region: "印尼科莫多岛"
-            },
-            { 
-                id: 12, 
-                name: "绿海龟", 
-                scientific: "Chelonia mydas",
-                icon: "fas fa-turtle",
-                type: "爬行动物",
-                traits: ["长寿", "迁徙", "和平", "耐力", "导航"],
-                description: "绿海龟是海洋中的长寿旅行家，以其惊人的迁徙能力和和平的性格而闻名。你像绿海龟一样具有长远的眼光和惊人的耐力，能够在人生的长途旅行中保持方向，性格平和而坚定。",
-                region: "全球热带和亚热带海洋"
-            },
-            // 昆虫与蛛形纲
-            { 
-                id: 13, 
-                name: "君主斑蝶", 
-                scientific: "Danaus plexippus",
-                icon: "fas fa-butterfly",
-                type: "昆虫",
-                traits: ["迁徙", "蜕变", "色彩", "耐力", "导航"],
-                description: "君主斑蝶是昆虫界的迁徙奇迹，以其惊人的长途迁徙和美丽的蜕变过程而闻名。你像君主斑蝶一样经历过美丽的蜕变，拥有惊人的毅力和导航能力，能够在人生的旅程中找到方向。",
-                region: "北美洲"
-            },
-            { 
-                id: 14, 
-                name: "跳蛛", 
-                scientific: "Salticidae",
-                icon: "fas fa-spider",
-                type: "蛛形纲",
-                traits: ["跳跃", "视力", "耐心", "精准", "独立"],
-                description: "跳蛛是蛛形纲中的视觉专家，以其卓越的视力和精准的跳跃能力而闻名。你像跳蛛一样具有敏锐的观察力，能够精准地抓住机会，行事耐心而独立，总是能在关键时刻做出正确的跳跃。",
-                region: "全球广泛分布"
-            },
-            // 其他动物
-            { 
-                id: 15, 
-                name: "巨型管水母", 
-                scientific: "Praya dubia",
-                icon: "fas fa-jellyfish",
-                type: "其他动物",
-                traits: ["群体", "透明", "深海", "合作", "适应"],
-                description: "巨型管水母是深海中的群体奇迹，实际上是许多个体组成的超级生物体。你像管水母一样重视群体合作，在集体中能够发挥最大价值，适应深海般复杂的环境，拥有透明真诚的性格。",
-                region: "深海"
+                name: "项目经理", 
+                field: "管理/运营",
+                icon: "fas fa-project-diagram",
+                type: "管理类",
+                traits: ["规划组织", "团队领导", "风险控制", "沟通协调", "问题解决"],
+                description: "项目经理负责规划、执行和完成项目，确保项目在预算、时间和质量要求内达成目标。他们协调资源、管理团队、控制风险，是项目成功的关键角色。",
+                strengths: "你具备出色的规划组织能力和团队领导力，能够制定清晰的项目计划并推动执行。你善于沟通协调，能够管理多方利益相关者，及时解决问题和控制风险。",
+                prospects: "项目经理在各行各业都有广泛需求，尤其是在IT、建筑、工程、咨询等领域。职业发展路径包括高级项目经理、项目总监、项目组合经理，也可向企业高管方向发展。",
+                learning: "建议学习项目管理方法论（如PMP、敏捷开发）、团队管理技巧、风险管理、沟通协调技能。掌握项目管理工具（如Jira、Trello、Microsoft Project）。",
+                entryJobs: "项目助理、项目协调员、项目经理（助理）、产品经理、运营经理"
             }
         ];
 
-        // 测试问题
+        // 测试问题 - 25道专业职业测试题
         const questions = [
             {
                 id: 1,
-                text: "在社交场合中，你通常扮演什么角色？",
+                text: "在解决问题时，你更倾向于？",
                 options: [
-                    { text: "领导者，组织大家活动", animalId: 1 },
-                    { text: "开心果，活跃气氛", animalId: 9 },
-                    { text: "观察者，安静地观察周围", animalId: 8 },
-                    { text: "协调者，帮助大家沟通", animalId: 6 }
+                    { text: "分析数据，寻找逻辑关系", careerId: 1 },
+                    { text: "咨询他人意见，集体讨论", careerId: 10 },
+                    { text: "凭直觉和创造力寻找方案", careerId: 6 },
+                    { text: "制定系统化的解决步骤", careerId: 2 }
                 ]
             },
             {
                 id: 2,
-                text: "面对新环境，你的第一反应是？",
+                text: "你更喜欢的工作环境是？",
                 options: [
-                    { text: "兴奋探索，寻找机会", animalId: 10 },
-                    { text: "谨慎观察，了解规则", animalId: 3 },
-                    { text: "寻找同伴，建立社交", animalId: 9 },
-                    { text: "保持距离，慢慢适应", animalId: 5 }
+                    { text: "安静、独立的办公室或实验室", careerId: 1 },
+                    { text: "开放、互动的团队空间", careerId: 4 },
+                    { text: "灵活、自由的工作场所", careerId: 7 },
+                    { text: "结构化、有明确流程的环境", careerId: 9 }
                 ]
             },
             {
                 id: 3,
-                text: "你如何处理压力或挑战？",
+                text: "哪种活动最吸引你？",
                 options: [
-                    { text: "直面挑战，积极解决", animalId: 1 },
-                    { text: "寻求帮助，团队合作", animalId: 7 },
-                    { text: "独立思考，创造方案", animalId: 10 },
-                    { text: "暂时回避，等待时机", animalId: 11 }
+                    { text: "编写程序或解决技术难题", careerId: 1 },
+                    { text: "分析市场趋势或商业数据", careerId: 5 },
+                    { text: "创作艺术作品或设计作品", careerId: 6 },
+                    { text: "帮助他人解决问题", careerId: 8 }
                 ]
             },
             {
                 id: 4,
-                text: "周末你更喜欢如何度过？",
+                text: "你如何描述你的沟通风格？",
                 options: [
-                    { text: "与朋友聚会或参加活动", animalId: 6 },
-                    { text: "户外探险或运动", animalId: 13 },
-                    { text: "在家安静阅读或思考", animalId: 8 },
-                    { text: "学习新技能或知识", animalId: 10 }
+                    { text: "直接、逻辑清晰，注重事实", careerId: 1 },
+                    { text: "有说服力，注重影响他人", careerId: 4 },
+                    { text: "富有想象力和表达力", careerId: 7 },
+                    { text: "耐心倾听，关注他人感受", careerId: 8 }
                 ]
             },
             {
                 id: 5,
-                text: "在工作中，你更倾向于？",
+                text: "面对新任务，你的第一反应是？",
                 options: [
-                    { text: "领导团队，制定方向", animalId: 1 },
-                    { text: "团队合作，共同完成", animalId: 15 },
-                    { text: "独立工作，专注细节", animalId: 14 },
-                    { text: "创造性解决问题", animalId: 3 }
+                    { text: "制定详细的执行计划", careerId: 10 },
+                    { text: "研究相关的技术或知识", careerId: 1 },
+                    { text: "思考如何创新或与众不同", careerId: 6 },
+                    { text: "了解任务对他人或团队的影响", careerId: 8 }
                 ]
             },
             {
                 id: 6,
-                text: "你如何描述自己的沟通风格？",
+                text: "你最看重工作中的什么？",
                 options: [
-                    { text: "直接明确，有说服力", animalId: 1 },
-                    { text: "友善热情，富有感染力", animalId: 9 },
-                    { text: "深思熟虑，有逻辑性", animalId: 8 },
-                    { text: "灵活变通，适应对方", animalId: 5 }
+                    { text: "技术挑战和学习机会", careerId: 1 },
+                    { text: "收入和职业发展空间", careerId: 5 },
+                    { text: "创造性和自我表达", careerId: 7 },
+                    { text: "社会影响和意义", careerId: 9 }
                 ]
             },
             {
                 id: 7,
-                text: "你更看重以下哪种价值观？",
+                text: "你如何处理压力？",
                 options: [
-                    { text: "自由和独立", animalId: 3 },
-                    { text: "家庭和关系", animalId: 7 },
-                    { text: "知识和智慧", animalId: 8 },
-                    { text: "和平与和谐", animalId: 2 }
+                    { text: "系统分析问题，制定解决方案", careerId: 2 },
+                    { text: "与他人讨论，寻求支持", careerId: 8 },
+                    { text: "通过创造性活动放松", careerId: 6 },
+                    { text: "调整计划，重新分配资源", careerId: 10 }
                 ]
             },
             {
                 id: 8,
-                text: "面对冲突，你的处理方式是？",
+                text: "你更喜欢哪种学习方式？",
                 options: [
-                    { text: "直接面对，解决问题", animalId: 11 },
-                    { text: "寻求妥协，保持和谐", animalId: 2 },
-                    { text: "暂时回避，冷静思考", animalId: 5 },
-                    { text: "借助外力，协调解决", animalId: 6 }
+                    { text: "动手实践，解决实际问题", careerId: 1 },
+                    { text: "系统学习理论框架", careerId: 5 },
+                    { text: "观察模仿，然后创新", careerId: 6 },
+                    { text: "与他人讨论和分享", careerId: 9 }
                 ]
             },
             {
                 id: 9,
-                text: "你更喜欢哪种学习方式？",
+                text: "在团队中，你通常扮演什么角色？",
                 options: [
-                    { text: "实践操作，亲身尝试", animalId: 10 },
-                    { text: "系统学习，建立框架", animalId: 4 },
-                    { text: "观察模仿，总结经验", animalId: 14 },
-                    { text: "交流讨论，分享观点", animalId: 9 }
+                    { text: "技术专家，解决难题", careerId: 1 },
+                    { text: "协调者，促进合作", careerId: 10 },
+                    { text: "创意提供者，提出新想法", careerId: 6 },
+                    { text: "支持者，帮助团队成员", careerId: 8 }
                 ]
             },
             {
                 id: 10,
-                text: "你如何应对变化？",
+                text: "你更擅长处理哪种信息？",
                 options: [
-                    { text: "积极适应，寻找机会", animalId: 5 },
-                    { text: "谨慎评估，逐步调整", animalId: 12 },
-                    { text: "创造变化，主导进程", animalId: 1 },
-                    { text: "依靠团队，共同应对", animalId: 7 }
+                    { text: "数字和统计数据", careerId: 2 },
+                    { text: "文字和语言信息", careerId: 7 },
+                    { text: "视觉和图像信息", careerId: 6 },
+                    { text: "人际关系和情感信息", careerId: 8 }
                 ]
             },
             {
                 id: 11,
-                text: "你更倾向于哪种工作环境？",
+                text: "你如何做决策？",
                 options: [
-                    { text: "快节奏，充满挑战", animalId: 13 },
-                    { text: "稳定有序，有规律", animalId: 12 },
-                    { text: "灵活自由，有创造性", animalId: 3 },
-                    { text: "团队协作，社交性强", animalId: 15 }
+                    { text: "基于数据和逻辑分析", careerId: 2 },
+                    { text: "考虑商业利益和风险", careerId: 5 },
+                    { text: "凭直觉和创意灵感", careerId: 6 },
+                    { text: "考虑对他人的影响", careerId: 9 }
                 ]
             },
             {
                 id: 12,
-                text: "你的决策风格更接近？",
+                text: "你更喜欢哪种工作节奏？",
                 options: [
-                    { text: "快速果断，凭直觉", animalId: 14 },
-                    { text: "深思熟虑，分析利弊", animalId: 8 },
-                    { text: "咨询他人，集体决定", animalId: 6 },
-                    { text: "灵活调整，根据情况", animalId: 10 }
+                    { text: "专注深入，长时间研究一个问题", careerId: 1 },
+                    { text: "快节奏，多任务处理", careerId: 4 },
+                    { text: "灵活自由，按自己的节奏", careerId: 7 },
+                    { text: "稳定规律，可预测的日程", careerId: 9 }
                 ]
             },
             {
                 id: 13,
-                text: "你如何看待冒险？",
+                text: "你对成功的定义更接近？",
                 options: [
-                    { text: "热爱冒险，寻求刺激", animalId: 13 },
-                    { text: "适度冒险，计算风险", animalId: 3 },
-                    { text: "避免冒险，追求稳定", animalId: 2 },
-                    { text: "团队冒险，共同承担", animalId: 7 }
+                    { text: "解决复杂技术难题", careerId: 1 },
+                    { text: "实现商业目标和经济收益", careerId: 5 },
+                    { text: "创作出有影响力的作品", careerId: 6 },
+                    { text: "帮助他人成长和改变", careerId: 8 }
                 ]
             },
             {
                 id: 14,
-                text: "你如何表达情感？",
+                text: "你如何应对失败？",
                 options: [
-                    { text: "直接表达，热情外露", animalId: 9 },
-                    { text: "含蓄内敛，间接表达", animalId: 8 },
-                    { text: "通过行动，而非语言", animalId: 11 },
-                    { text: "选择性表达，因人而异", animalId: 5 }
+                    { text: "分析原因，改进方法", careerId: 2 },
+                    { text: "调整策略，尝试新方法", careerId: 4 },
+                    { text: "从中寻找创意灵感", careerId: 6 },
+                    { text: "寻求他人建议和支持", careerId: 8 }
                 ]
             },
             {
                 id: 15,
-                text: "你更看重未来的什么？",
+                text: "你更喜欢的工作成果是？",
                 options: [
-                    { text: "个人成就和成长", animalId: 4 },
-                    { text: "家庭和人际关系", animalId: 7 },
-                    { text: "知识和智慧积累", animalId: 10 },
-                    { text: "社会影响和贡献", animalId: 1 }
+                    { text: "功能完善的软件或系统", careerId: 1 },
+                    { text: "详细的商业报告或分析", careerId: 5 },
+                    { text: "美观的视觉设计或创意作品", careerId: 6 },
+                    { text: "看到他人因你的帮助而进步", careerId: 9 }
                 ]
             },
             {
                 id: 16,
-                text: "你如何处理复杂问题？",
+                text: "你如何看待规则和流程？",
                 options: [
-                    { text: "分解问题，逐步解决", animalId: 14 },
-                    { text: "整体思考，系统解决", animalId: 10 },
-                    { text: "寻求帮助，团队协作", animalId: 15 },
-                    { text: "暂时搁置，等待灵感", animalId: 8 }
+                    { text: "作为效率工具，但可以优化", careerId: 10 },
+                    { text: "需要严格遵守的技术规范", careerId: 1 },
+                    { text: "可能限制创造力的框架", careerId: 6 },
+                    { text: "确保公平和质量的保障", careerId: 9 }
                 ]
             },
             {
                 id: 17,
-                text: "你更喜欢哪种旅行方式？",
+                text: "你更喜欢哪种社交活动？",
                 options: [
-                    { text: "冒险探索，未知路线", animalId: 13 },
-                    { text: "精心规划，舒适旅程", animalId: 12 },
-                    { text: "与朋友同行，社交旅行", animalId: 6 },
-                    { text: "独自旅行，自由自在", animalId: 3 }
+                    { text: "技术交流会或研讨会", careerId: 1 },
+                    { text: "商务社交或行业会议", careerId: 4 },
+                    { text: "艺术展览或创意工作坊", careerId: 6 },
+                    { text: "志愿服务或社区活动", careerId: 8 }
                 ]
             },
             {
                 id: 18,
-                text: "你如何看待规则？",
+                text: "你如何管理时间？",
                 options: [
-                    { text: "必要遵守，维持秩序", animalId: 7 },
-                    { text: "灵活运用，服务目标", animalId: 10 },
-                    { text: "挑战不合理规则", animalId: 1 },
-                    { text: "创造自己的规则", animalId: 3 }
+                    { text: "制定详细的时间表和计划", careerId: 10 },
+                    { text: "按优先级处理任务", careerId: 5 },
+                    { text: "根据灵感和状态调整", careerId: 7 },
+                    { text: "为他人需求预留时间", careerId: 8 }
                 ]
             },
             {
                 id: 19,
-                text: "你的创造力表现在？",
+                text: "你对新技术的态度是？",
                 options: [
-                    { text: "解决问题的新方法", animalId: 10 },
-                    { text: "艺术或审美表达", animalId: 6 },
-                    { text: "组织和领导方式", animalId: 1 },
-                    { text: "日常生活的小创新", animalId: 14 }
+                    { text: "热衷学习并掌握最新技术", careerId: 1 },
+                    { text: "关注其商业应用价值", careerId: 4 },
+                    { text: "思考如何创造性应用", careerId: 6 },
+                    { text: "关注其对人们生活的影响", careerId: 9 }
                 ]
             },
             {
                 id: 20,
-                text: "你希望别人如何记住你？",
+                text: "你更喜欢独立工作还是团队合作？",
                 options: [
-                    { text: "有影响力的领导者", animalId: 1 },
-                    { text: "真诚可靠的朋友", animalId: 9 },
-                    { text: "智慧深刻的思想者", animalId: 8 },
-                    { text: "独特有趣的灵魂", animalId: 3 }
+                    { text: "大部分时间独立工作", careerId: 1 },
+                    { text: "团队合作，但保持独立性", careerId: 5 },
+                    { text: "灵活，根据项目需要调整", careerId: 7 },
+                    { text: "喜欢团队合作和互动", careerId: 8 }
+                ]
+            },
+            {
+                id: 21,
+                text: "你如何应对批评？",
+                options: [
+                    { text: "理性分析，改进工作", careerId: 2 },
+                    { text: "作为改进产品或服务的反馈", careerId: 3 },
+                    { text: "作为创意改进的参考", careerId: 6 },
+                    { text: "理解批评者的立场和需求", careerId: 8 }
+                ]
+            },
+            {
+                id: 22,
+                text: "你更关注工作的哪个方面？",
+                options: [
+                    { text: "技术实现的质量和效率", careerId: 1 },
+                    { text: "商业价值和市场表现", careerId: 4 },
+                    { text: "创意表达和美学价值", careerId: 6 },
+                    { text: "社会意义和人际关系", careerId: 9 }
+                ]
+            },
+            {
+                id: 23,
+                text: "你更喜欢处理哪种问题？",
+                options: [
+                    { text: "逻辑难题或技术挑战", careerId: 1 },
+                    { text: "商业策略或市场问题", careerId: 5 },
+                    { text: "设计或创意表达问题", careerId: 6 },
+                    { text: "人际关系或沟通问题", careerId: 8 }
+                ]
+            },
+            {
+                id: 24,
+                text: "你如何衡量工作成果？",
+                options: [
+                    { text: "技术指标和性能数据", careerId: 1 },
+                    { text: "商业指标和财务数据", careerId: 5 },
+                    { text: "创意质量和美学评价", careerId: 6 },
+                    { text: "用户满意度和社会影响", careerId: 8 }
+                ]
+            },
+            {
+                id: 25,
+                text: "你希望十年后的职业状态是？",
+                options: [
+                    { text: "技术专家或架构师", careerId: 1 },
+                    { text: "企业高管或创业者", careerId: 5 },
+                    { text: "知名创作者或艺术家", careerId: 6 },
+                    { text: "资深导师或咨询专家", careerId: 8 }
                 ]
             }
         ];
@@ -1034,7 +1195,7 @@
         const state = {
             currentQuestionIndex: 0,
             answers: new Array(questions.length).fill(null),
-            animalScores: new Array(animalsDatabase.length).fill(0)
+            careerScores: new Array(careersDatabase.length).fill(0)
         };
 
         // DOM元素
@@ -1055,11 +1216,15 @@
         // 结果页元素
         const resultIcon = document.getElementById('resultIcon');
         const resultName = document.getElementById('resultName');
-        const resultScientific = document.getElementById('resultScientific');
+        const resultField = document.getElementById('resultField');
         const resultDescription = document.getElementById('resultDescription');
         const resultTraits = document.getElementById('resultTraits');
         const matchPercentage = document.getElementById('matchPercentage');
-        const otherAnimalsList = document.getElementById('otherAnimalsList');
+        const strengthsAnalysis = document.getElementById('strengthsAnalysis');
+        const prospectsAnalysis = document.getElementById('prospectsAnalysis');
+        const learningAnalysis = document.getElementById('learningAnalysis');
+        const entryJobsAnalysis = document.getElementById('entryJobsAnalysis');
+        const otherCareersList = document.getElementById('otherCareersList');
 
         // 初始化应用
         function init() {
@@ -1078,13 +1243,14 @@
 
         // 开始测试
         function startTest() {
+            console.log("开始测试按钮被点击");
             coverPage.style.display = 'none';
             testPage.style.display = 'block';
             resultPage.style.display = 'none';
             
             state.currentQuestionIndex = 0;
             state.answers.fill(null);
-            state.animalScores.fill(0);
+            state.careerScores.fill(0);
             
             showQuestion(state.currentQuestionIndex);
         }
@@ -1092,6 +1258,7 @@
         // 显示问题
         function showQuestion(index) {
             const question = questions[index];
+            console.log("显示问题", index, question);
             
             // 更新进度条和文本
             const progress = ((index + 1) / questions.length) * 100;
@@ -1126,19 +1293,19 @@
             
             // 更新导航按钮状态
             prevBtn.disabled = index === 0;
+            nextBtn.disabled = state.answers[index] === null;
             
             if (index === questions.length - 1) {
                 nextBtn.innerHTML = '查看结果 <i class="fas fa-chart-bar"></i>';
             } else {
                 nextBtn.innerHTML = '下一题 <i class="fas fa-arrow-right"></i>';
             }
-            
-            // 如果已回答过此题，启用下一题按钮
-            nextBtn.disabled = state.answers[index] === null;
         }
 
         // 选择选项
         function selectOption(questionIndex, optionIndex) {
+            console.log("选择选项", questionIndex, optionIndex);
+            
             // 移除之前的选择
             const options = document.querySelectorAll('.option');
             options.forEach(option => option.classList.remove('selected'));
@@ -1152,9 +1319,14 @@
             // 启用下一题按钮
             nextBtn.disabled = false;
             
-            // 更新动物得分
+            // 更新职业得分
             const selectedOption = questions[questionIndex].options[optionIndex];
-            state.animalScores[selectedOption.animalId - 1] += 1;
+            state.careerScores[selectedOption.careerId - 1] += 1;
+            
+            // 如果是最后一题，显示"查看结果"按钮
+            if (questionIndex === questions.length - 1) {
+                nextBtn.innerHTML = '查看结果 <i class="fas fa-chart-bar"></i>';
+            }
         }
 
         // 显示上一题
@@ -1178,50 +1350,60 @@
 
         // 显示结果
         function showResult() {
-            // 计算最终动物匹配
-            const maxScore = Math.max(...state.animalScores);
-            const maxScoreIndex = state.animalScores.indexOf(maxScore);
-            const matchedAnimal = animalsDatabase[maxScoreIndex];
+            console.log("显示结果");
+            
+            // 计算最终职业匹配
+            const maxScore = Math.max(...state.careerScores);
+            const maxScoreIndex = state.careerScores.indexOf(maxScore);
+            const matchedCareer = careersDatabase[maxScoreIndex];
+            
+            console.log("匹配的职业", matchedCareer);
             
             // 计算匹配百分比
-            const percentage = Math.min(95, Math.max(70, Math.round((maxScore / 20) * 100)));
+            const percentage = Math.min(95, Math.max(70, Math.round((maxScore / 25) * 100)));
             
             // 设置结果页面内容
-            resultIcon.innerHTML = `<i class="${matchedAnimal.icon}"></i>`;
-            resultName.textContent = matchedAnimal.name;
-            resultScientific.textContent = matchedAnimal.scientific;
-            resultDescription.textContent = matchedAnimal.description;
+            resultIcon.innerHTML = `<i class="${matchedCareer.icon}"></i>`;
+            resultName.textContent = matchedCareer.name;
+            resultField.textContent = matchedCareer.field;
+            resultDescription.textContent = matchedCareer.description;
             matchPercentage.textContent = `${percentage}%`;
             
             // 添加特征标签
             resultTraits.innerHTML = '';
-            matchedAnimal.traits.forEach(trait => {
+            matchedCareer.traits.forEach(trait => {
                 const traitElement = document.createElement('div');
                 traitElement.className = 'trait';
                 traitElement.textContent = trait;
                 resultTraits.appendChild(traitElement);
             });
             
-            // 添加其他可能匹配的动物
-            otherAnimalsList.innerHTML = '';
+            // 添加详细分析
+            strengthsAnalysis.textContent = matchedCareer.strengths;
+            prospectsAnalysis.textContent = matchedCareer.prospects;
+            learningAnalysis.textContent = matchedCareer.learning;
+            entryJobsAnalysis.textContent = matchedCareer.entryJobs;
             
-            // 找到得分第二和第三的动物
-            const sortedScores = [...state.animalScores].map((score, index) => ({ score, index }))
+            // 添加其他可能匹配的职业
+            otherCareersList.innerHTML = '';
+            
+            // 找到得分第二和第三的职业
+            const sortedScores = [...state.careerScores].map((score, index) => ({ score, index }))
                 .sort((a, b) => b.score - a.score);
             
-            // 显示前5个其他动物（排除已经匹配的）
+            // 显示前4个其他职业（排除已经匹配的）
             let count = 0;
-            for (let i = 0; i < sortedScores.length && count < 5; i++) {
+            for (let i = 0; i < sortedScores.length && count < 4; i++) {
                 if (sortedScores[i].index !== maxScoreIndex) {
-                    const animal = animalsDatabase[sortedScores[i].index];
-                    const otherAnimalElement = document.createElement('div');
-                    otherAnimalElement.className = 'other-animal';
-                    otherAnimalElement.innerHTML = `
-                        <div class="other-animal-icon"><i class="${animal.icon}"></i></div>
-                        <div style="font-weight: 600; font-size: 0.9rem;">${animal.name}</div>
-                        <div class="animal-type-tag">${animal.type}</div>
+                    const career = careersDatabase[sortedScores[i].index];
+                    const otherCareerElement = document.createElement('div');
+                    otherCareerElement.className = 'other-career';
+                    otherCareerElement.innerHTML = `
+                        <div class="other-career-icon"><i class="${career.icon}"></i></div>
+                        <div class="other-career-name">${career.name}</div>
+                        <div class="other-career-field">${career.field}</div>
                     `;
-                    otherAnimalsList.appendChild(otherAnimalElement);
+                    otherCareersList.appendChild(otherCareerElement);
                     count++;
                 }
             }
@@ -1230,6 +1412,9 @@
             coverPage.style.display = 'none';
             testPage.style.display = 'none';
             resultPage.style.display = 'block';
+            
+            // 滚动到顶部
+            window.scrollTo(0, 0);
         }
 
         // 重新测试
@@ -1239,13 +1424,13 @@
 
         // 分享结果
         function shareResult() {
-            const animalName = resultName.textContent;
-            const shareText = `我刚完成了「匹配属于你的动物塑」测试，我的动物灵魂是${animalName}！你也来试试吧~`;
+            const careerName = resultName.textContent;
+            const shareText = `我刚完成了「测试适合你的职业」，我的匹配职业是${careerName}！你也来测试一下吧~`;
             
             // 使用Web Share API如果可用
             if (navigator.share) {
                 navigator.share({
-                    title: '我的动物塑测试结果',
+                    title: '我的职业匹配测试结果',
                     text: shareText,
                     url: window.location.href
                 })
